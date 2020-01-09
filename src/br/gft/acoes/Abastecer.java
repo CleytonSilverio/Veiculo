@@ -9,6 +9,9 @@ public class Abastecer {
 	Scanner sc = new Scanner(System.in);
 	
 	public void completa(Veiculo ve) {
+		if(ve.getLitrosCombustivel() == 100) {
+			System.out.println("O veiculo já está com o tanque cheio!");
+		}
 		if(ve.isLigado() == false && ve.getLitrosCombustivel()<100) {
 			System.out.println("Abastecendo o veiculo!");
 			ve.setLitrosCombustivel(100);
@@ -22,9 +25,7 @@ public class Abastecer {
 		if(ve.isLigado() == true) {
 			System.out.println("Se abastecer com o veiculo ligado não enche! :)");
 		}
-		if(ve.getLitrosCombustivel() == 100) {
-			System.out.println("O veiculo já está com o tanque cheio!");
-		}
+		
 	}
 
 }

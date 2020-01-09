@@ -1,8 +1,10 @@
 package br.gft.principal;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import br.gft.acoes.Abastecer;
+import br.gft.acoes.Acelerar;
 import br.gft.acoes.LigaDesliga;
 import br.gft.acoes.Pintar;
 import br.gft.dao.VeiculoDao;
@@ -48,7 +50,9 @@ public class Principal {
 		
 		for(;;) {
 			
-			//Menu
+			//Menus
+			System.out.println("Modelo do veiculo: " + ve.getModelo());
+			System.out.println("Cor do veiculo: " + ve.getCor());
 			System.out.println("1 - Ligar");
 			System.out.println("2 - Desligar");
 			System.out.println("3 - Abastecer");
@@ -63,7 +67,6 @@ public class Principal {
 			if(opcao == 1) {
 				new LigaDesliga().LigarCarro(ve);
 			}
-			
 			//fim da opção 1
 			
 			//opção 2
@@ -75,6 +78,18 @@ public class Principal {
 			//opcao 3
 			if (opcao == 3) {
 				new Abastecer().completa(ve);
+			}
+			//fim da opcao 3
+			
+			//opcao 4 
+			if(opcao == 4) {
+				new Acelerar().AceleraTudo(ve);
+			}
+			//fim da opcao 4
+			
+			//opcao 5
+			if(opcao == 5) {
+				new Acelerar().pisaNoFreio(ve);
 			}
 			
 			//opção 6

@@ -15,6 +15,7 @@ public class LigaDesliga {
 
 		if (ve.isLigado() == false) {
 			System.out.println("Ligando veiculo");
+			System.out.println("nhe nhe nhe nhe nhe nhe");
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
