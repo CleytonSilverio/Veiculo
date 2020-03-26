@@ -1,6 +1,5 @@
 package br.gft.principal;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 import br.gft.acoes.Abastecer;
@@ -12,7 +11,7 @@ import br.gft.entidade.Veiculo;
 
 public class Principal {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
 		Scanner sc = new Scanner(System.in);
 		Veiculo ve = new Veiculo();
@@ -45,8 +44,6 @@ public class Principal {
 			VeiculoDao dao = new VeiculoDao();
 			dao.inserir(ve);
 		}
-		
-		
 		
 		for(;;) {
 			

@@ -8,7 +8,7 @@ public class Pintar {
 	
 	Scanner sc = new Scanner(System.in);
 	
-	public void mudaCor(Veiculo ve) {
+	public void mudaCor(Veiculo ve) throws Exception {
 		if(ve.isLigado() == false) {
 			System.out.println("Por favor digite a nova cor do veiculo: ");
 			String cor = sc.next();
@@ -18,6 +18,7 @@ public class Pintar {
 		}
 		else {
 			System.out.println("Não podemos pintar com o veiculo ligado!");
+			throw new Exception("Não podemos pintar com o veiculo ligado!");
 		}
 		
 	}

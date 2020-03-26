@@ -8,9 +8,10 @@ public class Abastecer {
 	
 	Scanner sc = new Scanner(System.in);
 	
-	public void completa(Veiculo ve) {
+	public void completa(Veiculo ve) throws Exception {
 		if(ve.getLitrosCombustivel() == 100) {
 			System.out.println("O veiculo já está com o tanque cheio!");
+			throw new Exception("Veiculo já se encontra com o tanque cheio!");
 		}
 		if(ve.isLigado() == false && ve.getLitrosCombustivel()<100) {
 			System.out.println("Abastecendo o veiculo!");
@@ -24,6 +25,7 @@ public class Abastecer {
 		}
 		if(ve.isLigado() == true) {
 			System.out.println("Se abastecer com o veiculo ligado não enche! :)");
+			throw new Exception("Veiculo está ligado");
 		}
 		
 	}

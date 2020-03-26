@@ -4,7 +4,7 @@ import br.gft.entidade.Veiculo;
 
 public class Acelerar {
 	
-	public void AceleraTudo(Veiculo ve) {
+	public void AceleraTudo(Veiculo ve) throws Exception {
 		
 		if(ve.isLigado() == true) {
 			ve.setVelocidade(ve.getVelocidade() + 20);
@@ -12,6 +12,7 @@ public class Acelerar {
 		}
 		if(ve.isLigado() == false) {
 			System.out.println("O carro não anda desligado!");
+			throw new Exception("Veiculo desligado.");
 		}
 		
 	}

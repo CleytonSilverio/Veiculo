@@ -7,11 +7,10 @@ import br.gft.entidade.Veiculo;
 
 public class LigaDesliga {
 
-	//Veiculo ve = new Veiculo();
 	VeiculoDao dao = new VeiculoDao();
 	List<Veiculo> carros = dao.listar();
 
-	public void LigarCarro(Veiculo ve) {
+	public void LigarCarro(Veiculo ve) throws Exception {
 
 		if (ve.isLigado() == false) {
 			System.out.println("Ligando veiculo");
@@ -30,16 +29,12 @@ public class LigaDesliga {
 			}
 		} else if (ve.isLigado() == true) {
 			System.out.println("Veiculo já está ligado");
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+			throw new Exception("Veiculo já está ligado");
 		}
 
 	}
 	
-	public void DesligaCarro(Veiculo ve) {
+	public void DesligaCarro(Veiculo ve) throws Exception {
 		if(ve.isLigado() == true) {
 			System.out.println("Desligando veiculo");
 			try {
@@ -54,6 +49,7 @@ public class LigaDesliga {
 		else if(ve.isLigado() == false) {
 			System.out.println("\n\n");
 			System.out.println("Veiculo já está desligado!");
+			throw new Exception("Veiculo já está desligado!");
 		}
 	}
 
